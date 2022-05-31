@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
+  tasks:
+  - command: /usr/local/bin/okteto version
+    register: okteto_test_output
+  - name: okteto version
+    debug:
+      msg: '{{ okteto_test_output.stdout }}'

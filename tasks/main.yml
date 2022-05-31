@@ -1,0 +1,26 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: downloading {{ okteto_url }} to {{ okteto_install_exe }}
+  become: true
+  become_user: root
+  get_url:
+    url: '{{ okteto_url }}'
+    dest: '{{ okteto_install_exe }}'
+    mode: 0755
+    checksum: '{{ okteto_checksum }}'
+- name: linking {{ okteto_link }} to {{ okteto_install_exe }}
+  become: true
+  become_user: root
+  file:
+    src: '{{ okteto_install_exe }}'
+    dest: '{{ okteto_link }}'
+    state: link

@@ -1,0 +1,17 @@
+---
+# defaults file for okteto
+okteto_ver: 2.3.1
+okteto_os: Linux
+okteto_arch: x86_64
+okteto_install_dir: /usr/local/bin
+okteto_mirror: https://github.com/okteto/okteto/releases/download
+okteto_checksums:
+  '2.3.1':
+    # https://github.com/okteto/okteto/releases/download/2.3.1/okteto-Darwin-arm64.sha256
+    Darwin-arm64: sha256:2b7a975eaef44ee29b93f5ac525acf1a35cb690d98cfbaab602e13be84d04e13
+    # https://github.com/okteto/okteto/releases/download/2.3.1/okteto-Darwin-x86_64.sha256
+    Darwin-x86_64: sha256:9365f1d4c28ef70f053ec7420e1b45123c182fc70d321f97a084a7b01a5a701d
+    # https://github.com/okteto/okteto/releases/download/2.3.1/okteto-Linux-arm64.sha256
+    Linux-arm64: sha256:0660012cec834726ddb594dd1f856992802c28cf425e3746f9cfc4453a1d63ac
+    # https://github.com/okteto/okteto/releases/download/2.3.1/okteto-Linux-x86_64.sha256
+    Linux-x86_64: sha256:5bc3286d40f675dc58558b172800316b53f8768098bd5aa4ee76b5e0474f8fde

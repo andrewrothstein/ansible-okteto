@@ -1,0 +1,7 @@
+---
+# vars file for okteto
+okteto_platform: '{{ okteto_os }}-{{ okteto_arch }}'
+okteto_url: '{{ okteto_mirror }}/{{ okteto_ver }}/okteto-{{ okteto_platform }}'
+okteto_checksum: '{{ okteto_checksums[okteto_ver][okteto_platform] }}'
+okteto_install_exe: '{{ okteto_install_dir }}/okteto-{{ okteto_ver }}-{{ okteto_platform }}'
+okteto_link: '{{ okteto_install_dir }}/okteto'
