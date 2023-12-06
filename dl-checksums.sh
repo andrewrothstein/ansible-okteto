@@ -22,4 +22,4 @@ dl_ver() {
     dl $ver Linux x86_64
 }
 
-dl_ver ${1:-2.22.3}
+dl_ver ${1:-2.23.0}
