@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,18 +9,18 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: downloading {{ okteto_url }} to {{ okteto_install_exe }}
+- name: Downloading {{ okteto_url }} to {{ okteto_install_exe }}
   become: true
   become_user: root
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ okteto_url }}'
     dest: '{{ okteto_install_exe }}'
-    mode: 0755
+    mode: '755'
     checksum: '{{ okteto_checksum }}'
-- name: linking {{ okteto_link }} to {{ okteto_install_exe }}
+- name: Linking {{ okteto_link }} to {{ okteto_install_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ okteto_install_exe }}'
     dest: '{{ okteto_link }}'
     state: link

@@ -1,10 +1,14 @@
 ---
-- hosts: all
-  roles:
-  - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.okteto
+  hosts: all
   tasks:
-  - command: /usr/local/bin/okteto version
-    register: okteto_test_output
-  - name: okteto version
-    debug:
-      msg: '{{ okteto_test_output.stdout }}'
+    - name: Installing andrewrothstein.okteto
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'okteto version'
+      ansible.builtin.command: /usr/local/bin/okteto version
+      changed_when: false
+      register: okteto_test_output
+    - name: Output of 'okteto version'
+      ansible.builtin.debug:
+        msg: '{{ okteto_test_output.stdout }}'
