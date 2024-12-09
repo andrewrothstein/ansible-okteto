@@ -1,6 +1,6 @@
 ---
 # defaults file for okteto
-okteto_ver: 3.1.0
+okteto_ver: 3.2.0
 okteto_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -359,3 +359,12 @@ okteto_checksums:
     Linux-arm64: sha256:394133ccbdc1ab0719d338d110da3818046b727edfb88bfb9bcbb0e8d9ad1263
     # https://github.com/okteto/okteto/releases/download/3.1.0/okteto-Linux-x86_64.sha256
     Linux-x86_64: sha256:b982e11f2167d11c6d06ce83862e1f1458a6d7bb8ee4c6b927efebd571712315
+  '3.2.0':
+    # https://github.com/okteto/okteto/releases/download/3.2.0/okteto-Darwin-arm64.sha256
+    Darwin-arm64: sha256:fbda9359d3b20d5ee77fa6011425d049a553eecfa4c8a05758f47a5fcd91c6f2
+    # https://github.com/okteto/okteto/releases/download/3.2.0/okteto-Darwin-x86_64.sha256
+    Darwin-x86_64: sha256:5fcc1466ae4fd6d1c588b8889614acb73710caa94b53ba03600041b58129c9c9
+    # https://github.com/okteto/okteto/releases/download/3.2.0/okteto-Linux-arm64.sha256
+    Linux-arm64: sha256:7201d512f0eb2696fbea207ec88f8a8428edac34ae33fd898cef8e70ea0f6714
+    # https://github.com/okteto/okteto/releases/download/3.2.0/okteto-Linux-x86_64.sha256
+    Linux-x86_64: sha256:01b35b1654fb9352c13f28ad3e87b595f35c926fbb73317d1b14059809ea18ab
